@@ -6765,7 +6765,7 @@ function Library:CreateWindow(WindowInfo)
             TabButton = New("TextButton", {
                 BackgroundColor3 = "MainColor",
                 BackgroundTransparency = 1,
-                Size = UDim2.new(1, 0, 0, 45),
+                Size = UDim2.new(0.5, 0, 0, 50),
                 Text = "",
                 Parent = Tabs,
             })
@@ -6788,6 +6788,7 @@ function Library:CreateWindow(WindowInfo)
                     ImageTransparency = 0.5,
                     Size = UDim2.fromScale(1, 1),
                     SizeConstraint = Enum.SizeConstraint.RelativeYY,
+                    Position = UDim2.new(0.5,0,0.5,0),
                     Parent = TabButton,
                 })
             end
@@ -6795,7 +6796,7 @@ function Library:CreateWindow(WindowInfo)
             --// Tab Container \\--
             TabContainer = New("Frame", {
                 BackgroundTransparency = 1,
-                Size = UDim2.fromScale(0.5, 1),
+                Size = UDim2.fromScale(0.7, 1),
                 Visible = false,
                 Parent = Container,
             })
@@ -7590,9 +7591,6 @@ function Library:CreateWindow(WindowInfo)
                 return
             end
 
-            TweenService:Create(TabLabel, Library.TweenInfo, {
-                TextTransparency = Hovering and 0.25 or 0.5,
-            }):Play()
             if TabIcon then
                 TweenService:Create(TabIcon, Library.TweenInfo, {
                     ImageTransparency = Hovering and 0.25 or 0.5,
@@ -7736,12 +7734,11 @@ function Library:CreateWindow(WindowInfo)
             Library.CantDragForced = not Library.CantDragForced
         end)
 
-
      New("ImageLabel", {
        Image = ImageId,
        ImageColor3 = Color3.fromRGB(255,255,255),
        Size = UDim2.new(0.3,0,0.3,0),
-       Parent = Toggle,
+       Parent = ToggleButton,
       })
 
 
