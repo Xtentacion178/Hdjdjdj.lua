@@ -7738,7 +7738,7 @@ function Library:CreateWindow(WindowInfo)
        Image = ImageId,
        ImageColor3 = Color3.fromRGB(255,255,255),
        Size = UDim2.new(0.3,0,0.3,0),
-       Parent = ToggleButton,
+       Parent = Toggle,
       })
 
 
